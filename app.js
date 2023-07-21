@@ -62,7 +62,7 @@ class Contact{
 
     static deleteContact(index){
         let db = JSON.parse(localStorage.contacts)
-        db.remove(index)
+        db.splice(index, 1)
         localStorage.setItem('contacts', JSON.stringify(db))
         Contact.renderContacts(JSON.parse(localStorage.contacts))
     }
