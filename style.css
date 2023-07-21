@@ -47,7 +47,7 @@ main{
     border: none;
     color: white;
     margin-left: 20px;
-    padding: 10px 40px;
+    padding: 10px 5px;
     border-radius: 20px;
     outline: 1px solid white;
     background-color: hsl(20.65,78.15%,76.67%);
@@ -66,6 +66,7 @@ main{
 
 .contacts .contact{
     gap: 50px;
+    width: 100%;
     display: flex;
     padding: 20px;
     align-items: center;

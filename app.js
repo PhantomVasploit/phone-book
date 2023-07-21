@@ -2,6 +2,7 @@ let contacts = document.querySelector('.contacts');
 let contactForm = document.querySelector('.contact-form')
 let contactInput = document.querySelector('.contact-input')
 let searchCriteria = document.querySelector('.search-input');
+let updateName = document.querySelector('.update-input');
 
 
 // initaialize local storage
@@ -84,6 +85,17 @@ searchCriteria.addEventListener('keydown', ()=>{
 
 let db =  JSON.parse(localStorage.contacts)
 
-db.forEach((item)=>{
-    it
+db.forEach((item, i)=>{
+    let deleteIcon = document.querySelector(`.delete-${i}`)
+    deleteIcon.addEventListener('click', ()=>{
+        Contact.deleteContact(i)
+    })
+})
+
+db.forEach((item, i)=>{
+    let updateIcon = document.querySelector(`.update-${i}`)
+
+    updateIcon.addEventListener('click', ()=>{
+      Contact.updateContact(i, updateName.value)  
+    })
 })
