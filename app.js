@@ -17,7 +17,7 @@ contactForm.addEventListener('submit', (e)=>{
 })
 
 searchCriteria.addEventListener('keydown', ()=>{
-    Contact.searchContact()
+    Contact.searchContact(searchCriteria.value)
 })
 
 
@@ -32,7 +32,8 @@ class Contact{
 
         let db = data ?? JSON.parse(localStorage.contacts)
         console.log(db);
-        db.forEach((contact)=>{
+        db.forEach((contact, i)=>{
+            
             contactHtml += `
                 <div class="contact">
                     <div class="image">
@@ -41,7 +42,13 @@ class Contact{
                     <div class="name">
                         <p>${contact}</p>
                     </div>
-                </div>
+                    <div class="update">
+                        <img width="20px" height="20px" src="./assets/updated.png" alt="">
+                    </div>
+                    <div class="delete">
+                        <img width="20px" height="20px" src="./assets/delete.png" alt="">
+                    </div>
+                    </div>
             `
         })
 
@@ -53,10 +60,10 @@ class Contact{
         localStorage.contacts = JSON.stringify([...db, contactInput.value])
     }
 
-    static searchContact(searchgit ){
+    static searchContact(searchInput){
         let db = JSON.parse(localStorage.contacts)
-        let data = db.filter((names)=>names==searchCriteria)
-        Contact.renderContacts(data)
+        let data = db.filter((names)=>names==searchInput)
+        console.log(data);
     }
 
     static updateContact(){
@@ -64,7 +71,8 @@ class Contact{
     }
 
     static deleteContact(){
-
+        let db = JSON.parse(localStorage.contacts)
+        
     }
 }
 

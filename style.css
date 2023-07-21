@@ -67,9 +67,9 @@ main{
 .contacts .contact{
     gap: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .text-inputs{
