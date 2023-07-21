@@ -43,10 +43,10 @@ class Contact{
                         <p>${contact}</p>
                     </div>
                     <div class="update">
-                        <img width="20px" height="20px" src="./assets/updated.png" alt="">
+                        <img class="update-${i}" width="20px" height="20px" src="./assets/updated.png" alt="">
                     </div>
                     <div class="delete">
-                        <img width="20px" height="20px" src="./assets/delete.png" alt="">
+                        <img class="delete-${i}" width="20px" height="20px" src="./assets/delete.png" alt="">
                     </div>
                     </div>
             `
@@ -66,13 +66,16 @@ class Contact{
         console.log(data);
     }
 
-    static updateContact(){
-
+    static updateContact(index, updateName){
+        let db = JSON.parse(localStorage.contacts)
+        db[index] = updateName
+        localStorage.setItem('contacts', JSON.stringify(db))
     }
 
-    static deleteContact(){
+    static deleteContact(index){
         let db = JSON.parse(localStorage.contacts)
-        
+        db.remove(index)
+        localStorage.setItem('contacts', JSON.stringify(db))
     }
 }
 
