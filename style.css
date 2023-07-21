@@ -47,7 +47,7 @@ main{
     border: none;
     color: white;
     margin-left: 20px;
-    padding: 10px 90px;
+    padding: 10px 40px;
     border-radius: 20px;
     outline: 1px solid white;
     background-color: hsl(20.65,78.15%,76.67%);
@@ -59,7 +59,7 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     background-color: white;
     border-radius: 0px 0px 10px 10px;
 }
@@ -69,4 +69,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+}
+
+.text-inputs{
+    display: flex;
 }
