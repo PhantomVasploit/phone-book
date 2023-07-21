@@ -90,15 +90,17 @@ db.forEach((item, i)=>{
     let deleteIcon = document.querySelector(`.delete-${i}`)
     deleteIcon.addEventListener('click', ()=>{
         Contact.deleteContact(i)
+        location.reload()
     })
-    location.reload()
+    
 })
 
 db.forEach((item, i)=>{
     let updateIcon = document.querySelector(`.update-${i}`)
 
     updateIcon.addEventListener('click', ()=>{
-      Contact.updateContact(i, updateName.value)  
+      Contact.updateContact(i, updateName.value)
+      location.reload()  
     })
-    location.reload()
+    
 })
