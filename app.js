@@ -8,19 +8,6 @@ let searchCriteria = document.querySelector('.search-input');
 let contactList = localStorage.getItem('contacts') == null || undefined ? localStorage.setItem('contacts', JSON.stringify([])) : localStorage.getItem('contacts')
 
 
-contactForm.addEventListener('submit', (e)=>{
-    e.preventDefault()
-    
-    Contact.addContact() 
-    Contact.renderContacts()
-    contactInput.value = ''           
-})
-
-searchCriteria.addEventListener('keydown', ()=>{
-    Contact.searchContact(searchCriteria.value)
-})
-
-
 class Contact{
 
     static renderContacts(data){
@@ -82,3 +69,21 @@ class Contact{
 
 
 Contact.renderContacts()
+
+contactForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    
+    Contact.addContact() 
+    Contact.renderContacts()
+    contactInput.value = ''           
+})
+
+searchCriteria.addEventListener('keydown', ()=>{
+    Contact.searchContact(searchCriteria.value)
+})
+
+let db =  JSON.parse(localStorage.contacts)
+
+db.forEach((item)=>{
+    it
+})
