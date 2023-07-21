@@ -1,7 +1,7 @@
 let contacts = document.querySelector('.contacts');
 let contactForm = document.querySelector('.contact-form')
 let contactInput = document.querySelector('.contact-input')
-let searchCriteria = document.querySelector('.search-input');
+// let searchCriteria = document.querySelector('.search-input');
 let updateName = document.querySelector('.update-input');
 
 
@@ -47,11 +47,11 @@ class Contact{
         localStorage.contacts = JSON.stringify([...db, contactInput.value])
     }
 
-    static searchContact(searchInput){
-        let db = JSON.parse(localStorage.contacts)
-        let data = db.filter((names)=>names==searchInput)
-        console.log(data);
-    }
+    // static searchContact(searchInput){
+    //     let db = JSON.parse(localStorage.contacts)
+    //     let data = db.filter((names)=>names==searchInput)
+    //     console.log(data);
+    // }
 
     static updateContact(index, updateName){
         let db = JSON.parse(localStorage.contacts)
@@ -80,9 +80,9 @@ contactForm.addEventListener('submit', (e)=>{
     contactInput.value = ''           
 })
 
-searchCriteria.addEventListener('keydown', ()=>{
-    Contact.searchContact(searchCriteria.value)
-})
+// searchCriteria.addEventListener('keydown', ()=>{
+//     Contact.searchContact(searchCriteria.value)
+// })
 
 let db =  JSON.parse(localStorage.contacts)
 
