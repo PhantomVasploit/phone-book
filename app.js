@@ -19,7 +19,6 @@ class Contact{
         let contactHtml = ''
 
         let db = data ?? JSON.parse(localStorage.contacts)
-        console.log(db);
         db.forEach((contact, i)=>{
             
             contactHtml += `
@@ -58,12 +57,14 @@ class Contact{
         let db = JSON.parse(localStorage.contacts)
         db[index] = updateName
         localStorage.setItem('contacts', JSON.stringify(db))
+        Contact.renderContacts(JSON.parse(localStorage.contacts))
     }
 
     static deleteContact(index){
         let db = JSON.parse(localStorage.contacts)
         db.remove(index)
         localStorage.setItem('contacts', JSON.stringify(db))
+        Contact.renderContacts(JSON.parse(localStorage.contacts))
     }
 }
 
