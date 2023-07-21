@@ -91,6 +91,7 @@ db.forEach((item, i)=>{
     deleteIcon.addEventListener('click', ()=>{
         Contact.deleteContact(i)
     })
+    location.reload()
 })
 
 db.forEach((item, i)=>{
@@ -99,4 +100,5 @@ db.forEach((item, i)=>{
     updateIcon.addEventListener('click', ()=>{
       Contact.updateContact(i, updateName.value)  
     })
+    location.reload()
 })
